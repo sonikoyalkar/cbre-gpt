@@ -1,23 +1,37 @@
-<div class="flex space-x-2 my-2">
+<div class="flex space-x-1 my-2 mx-2">
 
-    <div class="h-10 px-3 py-2 bg-gray-200 rounded-xl flex justify-center items-center">
+    <div class="h-10 px-3 py-2 bg-gray-200 rounded-xl whitespace-nowrap flex justify-center items-center">
         <div class="w-6 h-6"></div>
+        <img class="px-2 py-2" src="../../assets/direction.png">
         <div class="text-neutral-500 text-xs font-normal font-['Calibre']">Ask a followup query</div>
     </div>
 
-    <div class="w-40 h-10 px-3 py-2 bg-gray-200 rounded-xl flex justify-center items-center">
+    <div class="w-44 h-10 px-3 py-2 bg-gray-200 whitespace-nowrap rounded-xl flex justify-center items-center">
         <div class="w-6 h-6"></div>
-        <div class="text-neutral-500 text-xs font-normal font-['Calibre']">Ask a followup query</div>
+        <img class="px-2 py-2" src="../../assets/direction.png">
+        <div class="text-neutral-500 text-xs font-normal font-['Calibre']">Get me all expiring leases</div>
     </div>
 
-    <div class="w-40 h-10 px-3 py-2 bg-gray-200 rounded-xl flex justify-center items-center">
+    <div class="w-50 h-10 px-3 py-2 bg-gray-200 whitespace-nowrap rounded-xl flex justify-center items-center">
         <div class="w-6 h-6"></div>
-        <div class="text-neutral-500 text-xs font-normal font-['Calibre']">Ask a followup query</div>
+        <img class="px-2 py-2" src="../../assets/direction.png">
+        <div class="text-neutral-500 text-xs font-normal font-['Calibre']">Company dues to CBRE</div>
     </div>
-
+    <div class="w-70 h-10 px-3 py-2 bg-gray-200 whitespace-nowrap rounded-xl flex justify-center items-center">
+        <div class="w-6 h-6"></div>
+        <img class="px-2 py-2" src="../../assets/direction.png">
+        <div class="text-neutral-500 text-xs font-normal font-['Calibre']">Availabilities that have not been updated in
+            the last one month</div>
+    </div>
 </div>
 
+
+
 <section class="flex h-14 px-4 py-3 bg-white rounded border border-neutral-500 ">
-    <input class="w-full outline-none text-stone-500" type="text" placeholder="Type something to ask" />
-    <img class="" src="../../assets/vtr1.png">
+    <input type="text" #chatMessage id="chatMessage" required class="w-full outline-none text-stone-500" type="text"
+        placeholder="Type something to ask" />
+    <button type="button" class="" (click)="sendMessage(chatMessage.value)">
+        <img class="" src="../../assets/vtr1.png">
+    </button>
+
 </section>
