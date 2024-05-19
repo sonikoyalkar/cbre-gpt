@@ -10,45 +10,39 @@
 
 
     <div class="text-base text-gray-400 font-inter flex justify-center p-2">Today</div>
-    @for(item of messages; track $index){
-    <section
-        class="flex mt-3 text-xs space-x-2 text-gray-100 p-3 font-roboto bg-white rounded-lg border border-green-700">
-        <img src="../../assets/rox.png">
-        <span class="text-gray-500">
-            <b>{{item.question}} </b>
-            <img src="./images/arrow.png">
-            {{item.answer}}
-            <div>{{item.source}}</div>
-            <u class="text-green-500">Read more</u>
-        </span>
-    </section>
+    <!-- <owl-carousel-o class="w-80" [options]="customOptions">
+        @for(item of messages; track $index){
+        <ng-container>
+            <ng-template carouselSlide [id]=" 'abd' + $index + 'abc'" [height]="200" [width]="200">
+                <section
+                    class="flex mt-3 text-xs space-x-2 text-gray-100 p-3 font-roboto bg-white rounded-lg border border-green-700">
+                    <img src="../../assets/rox.png">
+                    <span class="text-gray-500">
+                        <b>{{item.question}} </b>
+                        <img src="./images/arrow.png">
+                        {{item.answer}}
+                        <div>{{item.source}}</div>
+                        <u class="text-green-500">Read more</u>
+                    </span>
+                </section>
+            </ng-template>
+        </ng-container>
+        }
+    </owl-carousel-o> -->
 
-    }
-    <!-- 
-    <section
-        class="flex mt-3 space-x-2 text-xs text-gray-100 p-3 font-roboto bg-white rounded-lg border border-green-700">
-        <img src="../../assets/manastu.png">
-        <span class="text-gray-500"><b>"Manastu Space Raises 3 Millionin Pre-Series A Funding" </b><img
-                src="./images/arrow.png">
-            Space -
-            techstartup Manastu Space has secured 3 million in funding for the development and
-            deployment of
-            its Green Propulsion and Debris Collision Avoidance System. The company has also secured
-            contracts with the Indian Defense and partnerships with French startup Latitude and iDEX.
-            <br>
-            <br>
-            (Source: YourStory) <u class="text-green-500">Read More</u></span>
+    <section class="flex space-x-2 w-[800px] overflow-scroll">
+        @for(item of messages; track $index){
+        <section
+            class="flex mt-3 w-80 text-xs space-x-2 text-gray-100 p-3 font-roboto bg-white rounded-lg border border-green-700">
+            <img src="../../assets/rox.png">
+            <span class="text-gray-500">
+                <b>{{item.question}} </b>
+                <img src="./images/arrow.png">
+                {{item.answer}}
+                <div>{{item.source}}</div>
+                <u class="text-green-500">Read more</u>
+            </span>
+        </section>
+        }
     </section>
-
-    <section
-        class="flex mt-3 text-xs space-x-2 text-gray-100 p-3 font-roboto bg-white rounded-lg border border-green-700">
-        <img src="../../assets/gg.png">
-        <span class="text-gray-500"><b>"GoodGudi Raises Seed Money to Expand its Lifestyle Retail
-                Chain"</b><img src="../../assets/arrow.png">
-            - GoodGudi, a fast lifestyle retail chain, has raised seed funding led by AC Ventures. The
-            company plans to open over 40 retail stores within the next two years, offering various
-            categories including home utility, travel accessories, fashion accessories, and more.
-            <br>
-            <br>(Source: AC Ventures) <u class="text-green-500">Read more</u></span>
-    </section> -->
 </div>

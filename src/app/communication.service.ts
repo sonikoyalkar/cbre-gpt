@@ -5,11 +5,15 @@ import { BehaviorSubject, of } from 'rxjs';
   providedIn: 'root'
 })
 export class CommunicationService {
+  
    private sharedDataSubject = new BehaviorSubject<any>({});
   sharedData$ = this.sharedDataSubject.asObservable();
 
   private sharedMessageSubject = new BehaviorSubject<any>({});
   sharedMessageData$ = this.sharedMessageSubject.asObservable();
+
+private sharedPinSubject = new BehaviorSubject<any>({});
+  sharedPinData$ = this.sharedPinSubject.asObservable();
 
   constructor() { }
   //send data to conversation histroy//
@@ -22,8 +26,14 @@ export class CommunicationService {
     this.sharedMessageSubject.next(data);
   }
 
+  //send data to pin//
+  sendPinData(data: any) { 
+     console.log(data)
+    this.sharedPinSubject.next(data);
+  }
+
   getMessage(msg: any) {
     
-    return of({ question: msg, answer:"angular is the js framework", image:"", source:"abcd", url:""})
+    return of({ question: msg, answer:"angular is the js framework", image:"", source:"abcd", url:"https://www.flipkart.com/"})
   }
 }
