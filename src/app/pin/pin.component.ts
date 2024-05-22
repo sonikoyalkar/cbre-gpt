@@ -9,9 +9,11 @@ import { CommunicationService } from '../communication.service';
   styleUrl: './pin.component.scss'
 })
 export class PinComponent {
- constructor( private communicationService:CommunicationService) {
-    this.communicationService.sharedData$.subscribe(data => {
-  console.log(data)
-})
-}
+  data: any = []
+  constructor(private communicationService: CommunicationService) {
+    this.communicationService.sharedPinData$.subscribe(data => {
+      console.log(data)
+      this.data.push(data)
+    })
+  }
 }

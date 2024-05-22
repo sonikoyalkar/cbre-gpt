@@ -1,20 +1,17 @@
 <div class="text-base font-semibold text-gray-900 px-2 py-2 mx-2  items-center">Pinned Conversations</div>
-
 <div class="px-2 py-2 mx-2 overflow-y-auto">
-    <div class=" flex justify-between items-start space-x-2 cursor-pointer px-2 py-2 border border-gray-900 rounded-lg">
-
+    @for(item of data; track $index){
+    @if(item.question){
+    <div
+        class=" flex justify-between items-start space-x-2 my-2 cursor-pointer px-2 py-2 border border-gray-900 rounded-lg">
         <img class="h-4 my-1" src="../../assets/markchat.png" />
         <div class="w-full">
             <div class="flex justify-between items-center">
-                <b class="">Pinned Item 1</b>
-
+                <b class="">{{item.question}}</b>
                 <img class="h-2" src="../../assets/uparrow.png">
-
             </div>
             <div class="text-sm font-inter ">
-                Lorem ipsum dolor sit amet consectetur. Vel sed urna mauris mi phasellus quis non. Egestas vitae
-                enim consequat pellentesque tortor lectus enim pretium et. Sit vitae scelerisque aliquam sit risus
-                in libero. Tristique vitae laoreet sed proin nulla egestas nibh proin.
+                {{item.answer}}
             </div>
             <div class="flex text-xs my-3  text-green-900 space-x-1">
                 <span class=" hover:border-gray-900 cursor-pointer">Mark
@@ -24,4 +21,6 @@
             </div>
         </div>
     </div>
+    }
+    }
 </div>

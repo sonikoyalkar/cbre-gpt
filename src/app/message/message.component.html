@@ -1,4 +1,4 @@
-<div>
+<div class="w-fit">
     <!-- <header class=" flex p-4 w-full justify-between items-center border-b border-gray-500">AskNidhi /
         <h1><img src="../../assets/AskNidhi.png"></h1>
         <button class="flex p-2 border-green-900 space-x-1 rounded-sm shadow">
@@ -9,7 +9,54 @@
     </header> -->
 
 
-    <div class="text-base text-gray-400 font-inter flex justify-center p-2">Today</div>
+
+    <div class="flex justify-between items-center text-[14px] p-2">
+        <div class="flex items-center justify-start space-x-2">
+            <div class="font-bold">
+                Filters Applied :
+            </div>
+            <div class=" px-2 py-3 rounded-lg border bg-[#F4E6E6]">
+                Expansions
+                <button class="font-bold">
+                    x
+                </button>
+            </div>
+            <div class="px-2 py-3 bg-[#E7E6F4] rounded-lg border">
+                Mergers and Acquisitions
+                <button class="font-bold">
+                    x
+                </button>
+            </div>
+            <div class="px-2 py-3 bg-[#E6F1F4] rounded-lg border">
+                Bankruptcy
+                <button class="font-bold">
+                    x
+                </button>
+            </div>
+            <div class="px-2 py-3 bg-[#E6F4EC] rounded-lg border">
+                Hiring
+                <button class="font-bold wy-4">
+                    x
+                </button>
+            </div>
+            <div class="px-2 py-3 rounded-lg border">
+                <button class="font-bold">
+                    + Add New Filter
+                </button>
+            </div>
+
+        </div>
+        <div class="flex justify-start items-end">
+            <select class="border rounded-lg px-2 py-2 bg-[#F8F8F8]" name="subject" id="subject">
+                <option value="null" selected="selected">Sort By</option>
+                <option value="">Hyderabad</option>
+                <option value="">Hyderabad</option>
+                <option value="">Hyderabad</option>
+                <option value="">Hyderabad</option>
+            </select>
+            <span><img class="flex justify-center place-items-center" src="../../assets/dot3.png"></span>
+        </div>
+    </div>
     <!-- <owl-carousel-o class="w-80" [options]="customOptions">
         @for(item of messages; track $index){
         <ng-container>
@@ -29,20 +76,36 @@
         </ng-container>
         }
     </owl-carousel-o> -->
+    <div class="w-[900px] overflow-hidden overflow-x-auto">
 
-    <section class="flex space-x-2 w-[800px] overflow-scroll">
-        @for(item of messages; track $index){
-        <section
-            class="flex mt-3 w-80 text-xs space-x-2 text-gray-100 p-3 font-roboto bg-white rounded-lg border border-green-700">
-            <img src="../../assets/rox.png">
-            <span class="text-gray-500">
-                <b>{{item.question}} </b>
-                <img src="./images/arrow.png">
-                {{item.answer}}
-                <div>{{item.source}}</div>
-                <u class="text-green-500">Read more</u>
-            </span>
+        <section class="flex space-x-2 w-fit">
+            @for(item of messages; track $index){
+            @if(item.question){
+            <section class="w-[208px] text-gray-100 p-3 font-roboto bg-white rounded-lg border border-green-700">
+                <div class="flex justify-end">
+                    <button class="" (click)="pinMessage($index)">
+                        <img class=" w-4" src="../../assets/pushpin.svg">
+                    </button>
+                </div>
+                <div class=" flex  justify-center -mx-3 items-center border-b">
+
+
+                    <img [src]="item.image">
+                </div>
+                <div class="text-gray-900 break-words text-wrap font-bold">
+                    {{item.question}}
+                </div>
+                <div class="text-gray-900">
+                    {{item.answer}} <span class="d-inline"><img class="w-6`" src="../../assets/arrow.png"></span>
+
+                </div>
+                <div>
+                    <button class="text-gray-700 p-2 rounded-md border bg-gray-300 my-2">{{item.source}}</button>
+                </div>
+            </section>
+            }
+            }
         </section>
-        }
-    </section>
+
+    </div>
 </div>

@@ -48,6 +48,9 @@ export class MessageComponent implements OnInit {
       this.messages.push(resp)
     })
   }
+  pinMessage(index: any) {
+    this.communicationService.sendPinData(this.messages[index])
+  }
 
 
 }
